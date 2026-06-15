@@ -1,0 +1,35 @@
+name: Test Agent Wrapper
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+        env:
+          DIRECT_LINE_SECRET: ${{ secrets.DIRECT_LINE_SECRET }}
+          BOT_ID: ${{ secrets.BOT_ID }}
+          TENANT_ID: ${{ secrets.TENANT_ID }}
+          ENVIRONMENT: test
+
+      - name: Lint code
+        run: npm run lint

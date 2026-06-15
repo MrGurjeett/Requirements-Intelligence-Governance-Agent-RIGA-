@@ -1,0 +1,39 @@
+{
+  "governanceReview": {
+    "section1_executiveSummary": {
+      "businessObjective": "Enable customers to transfer funds between accounts",
+      "primaryUser": "Authenticated bank customer",
+      "expectedOutcome": "Secure, fast fund transfer capability"
+    },
+    "section2_qualityScorecard": {
+      "clarity": "3/10",
+      "completeness": "2/10",
+      "testability": "2/10",
+      "securityReadiness": "2/10",
+      "complianceReadiness": "1/10",
+      "overallScore": "20/100"
+    },
+    "section9_finalVerdict": {
+      "developmentReadiness": "15/100",
+      "testingReadiness": "10/100",
+      "recommendation": "Not Ready",
+      "maturity": "Draft"
+    }
+  },
+  "enhancementSummary": {
+    "maturity": "Draft",
+    "score": "20/100",
+    "topFixes": [
+      "Define transfer SLA",
+      "Add MFA and security controls",
+      "Specify transaction limits"
+    ],
+    "priorityActions": {
+      "p1": "Define SLA, limits, MFA, rollback",
+      "p2": "Add audit logging, fraud rules",
+      "p3": "Validate compliance, security review"
+    },
+    "effort": "High",
+    "agentFocus": "Rewrite requirement with measurable SLA, security controls and compliance references"
+  }
+}
